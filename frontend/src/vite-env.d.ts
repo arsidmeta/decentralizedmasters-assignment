@@ -2,6 +2,7 @@
 
 interface ImportMetaEnv {
   readonly VITE_DYNAMIC_API_KEY: string
+  readonly VITE_API_URL?: string
 }
 
 interface ImportMeta {

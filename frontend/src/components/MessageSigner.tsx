@@ -102,7 +102,12 @@ function MessageSigner() {
       });
 
       // Send to backend for verification
-      const response = await fetch("/api/verify-signature", {
+      const apiUrl = import.meta.env.VITE_API_URL || "";
+      const apiEndpoint = apiUrl 
+        ? `${apiUrl}/api/verify-signature`
+        : "/api/verify-signature";
+      
+      const response = await fetch(apiEndpoint, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
